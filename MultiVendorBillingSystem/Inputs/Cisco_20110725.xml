@@ -1,0 +1,113 @@
+<time>
+Mon,4 Jul 2011 01:12:00 
+</time>
+<name>
+    kumar222
+</name>
+
+<NAS-IP>
+	4.230.20.157
+ </NAS-IP>
+
+ <NAS-Port>
+      855638111
+</NAS-Port>
+
+<Service-Type>
+
+Framed
+
+</Service-Type>
+
+<Framed-Protocol>
+
+            PPP
+
+</Framed-Protocol>
+
+<Framed-IP-Address>
+
+            174.95.73.67
+
+</Framed-IP-Address>
+
+ <Framed-IP-Netmask>
+
+255.255.255.255
+
+</Framed-IP-Netmask>
+
+<Vendor-Specific>
+
+            00:00:13:0a:2a:09:00:00:00:00
+
+</Vendor-Specific>
+
+<Calling-Station-Id>
+
+#bas1-erinmills65#801GE1
+
+</Calling-Station-Id>
+
+ 
+
+<NAS-Identifier>
+
+bas1-erinmills65
+
+</NAS-Identifier>        
+
+<Event-ccurred-at>
+
+            1309741924      
+
+</Event-ccurred-at>
+
+<NAS-Port-Type>
+
+            Ethernet
+
+</NAS-Port-Type>
+
+<Unisphere-Egress-Policy-Name>
+
+Default_Policy-egress
+
+</Unisphere-Egress-Policy-Name>
+
+<NAS-Port-ID>
+
+            GigabitEthernet 3/0/3.1220095:122-95
+
+</NAS-Port-ID>
+
+<Unisphere-PPPoE-Description>
+
+                        pppoe00:23:51:4d:78:88
+
+</Unisphere-PPPoE-Description>
+
+<Unisphere-Ingress-Policy-Name>
+
+         SMTP-BLOCK-Subscriber 
+
+</Unisphere-Ingress-Policy-Name>
+
+<Acct-Input-Octets>
+233193102
+</Acct-Input-Octets>
+
+<Acct-Output-Octets>
+1508028053
+</Acct-Output-Octets>
+
+<Acct-Session-Time>
+280801
+</Acct-Session-Time>
+
+<Time>
+
+            1309741920
+
+</Time>
+

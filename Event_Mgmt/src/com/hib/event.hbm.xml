@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping package="com.hib">
+
+
+	<class name="Event" table="events" catalog="eventmgmt" lazy="fa
+	lse">
+
+		<id name="event_id" >
+			<column name="event_id" />
+			<generator class="assigned" />
+		</id>
+
+
+		<property name="event_name" column="event_name" />
+		<property name="event_dura" column="event_dura" />
+
+		<many-to-one name="event_location" 
+		column="loc" class="Location" cascade="all" lazy="false"/>
+		
+		<set name="event_speakers" cascade="all,delete-orphan" lazy="false">
+		<key column="event_id" />
+		<one-to-many class="Speaker"/>
+		</set>
+
+
+	</class>
+
+
+		<query name="Event.byName">
+		
+		<![CDATA[
+		select event_name,event_dura from Event where event_name=:ename
+		]]>
+
+</query>
+
+	
+</hibernate-mapping>

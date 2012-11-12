@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<project basedir="." default="package">
+
+    <property name="root" value="." />
+    <property name="src.dir" value="${root}/src" />
+    <property name="config.dir" value="${root}/config" />
+    <property name="package.file" value="MultiVendorPlugin.jar" />
+    <property name="deploy.file" value="MultiVendorPlugin.zip" />
+    <property name="manifest.built.by" value="CGI" />
+    <property name="manifest.created.by" value="Muli Vendor Plug-in" />
+    <property name="manifest.main.class" value="com.MultiVendorBillingSystem" />
+
+<!-- First, I create my classpath (build.classpath) from all the jar files in my lib directory -->
+
+<path id="build.classpath">
+  <fileset dir="lib">
+    <include name="**/*.jar" />
+  </fileset>
+</path>
+	
+<target name="init">
+</target>
+	
+<target name="compile" depends="init">
+	<echo message="Deleting the previous class files..." />
+		<delete>
+			<fileset dir="${root}/bin">
+				<include name="**/*.*"/>
+			</fileset>
+		</delete>
+		
+		<echo message="Compiling the java source files..." />
+		<javac srcdir="${src.dir}" destdir="${root}/bin" debug="on">
+			<classpath>
+			    <fileset dir="lib">
+			      	<include name="*.jar"/>
+			    </fileset>
+			</classpath>            
+		</javac>
+</target>
+	
+
+
+<!-- Next, my package task uses that classpath -->
+<target name="package" depends="compile, buildJar">
+	<echo message="Constructing the project deployment files..." />
+		<zip destfile="${deploy.file}">
+		<fileset dir="${root}" includes="${package.file}"/>
+		<fileset dir="${root}/lib" includes="**/*.jar"/>
+	</zip>
+</target>	
+<target name="buildJar" depends="compile">
+	<echo message="Building the project jar files..." />
+	 
+	<!-- convert build.classpath to mf.classpath (the string needed for the manifest task) -->
+	<pathconvert property="mf.classpath" pathsep=" ">
+		<path refid="build.classpath" />
+		<flattenmapper />
+	</pathconvert>
+	
+	<!-- now build the manifest file, using mf.classpath -->
+	<tstamp/><!-- needed for TODAY -->
+	<manifest file="MANIFEST.MF">
+		<attribute name="Built-By" value="${manifest.built.by}"/>
+		<attribute name="Created-By" value="${manifest.created.by}"/>
+		<attribute name="Main-Class" value="${manifest.main.class}"/>
+		<attribute name="Built-Date" value="${TODAY}"/>
+		<attribute name="Class-Path" value="${mf.classpath}" />
+		<!-- attribute name="Implementation-Version" value="${version.number}-b${build.number}"/ -->   
+	</manifest>
+	  
+	<!-- create the jar file, including the manifest file we just created -->
+	<jar basedir="${root}/bin" 
+		destfile="${root}/${package.file}"
+		includes="**/*.class, **/*.xml"
+		manifest="MANIFEST.MF">
+	</jar>
+	
+</target>
+	
+</project>

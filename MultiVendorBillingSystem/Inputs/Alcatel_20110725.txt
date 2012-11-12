@@ -1,0 +1,35 @@
+Mon, 4 Jul 2011 01:12:00 
+User-Name = mathan111
+NAS-IP-Address = 64.230.20.47
+NAS-Port = 855638111
+Service-Type = Framed
+Framed-Protocol = PPP
+Framed-IP-Address = 174.95.73.67
+Framed-IP-Netmask = 255.255.255.255
+Framed-Compression = None
+Vendor-Specific = 00:00:13:0a:2a:06:00:00:00:00
+Vendor-Specific = 00:00:13:0a:2b:06:00:00:00:00
+Calling-Station-Id = #bas1-erinmills65#801GE1 ERMLON65BBG-ERMLON6507W#95
+NAS-Identifier = bas1-erinmills65
+Acct-Status-Type = Interim-Update
+Acct-Delay-Time = 0
+Acct-Input-Octets = 233193102
+Acct-Output-Octets = 1508028053
+Acct-Session-Id = erx GigabitEthernet 3/0/3.1345095:y12-95:1309741920
+Acct-Authentic = RADIUS
+Acct-Session-Time = 280801
+Acct-Input-Packets = 3408417
+Acct-Output-Packets = 4381456
+Acct-Input-Gigawords = 0
+Acct-Output-Gigawords = 
+Event-Timestamp = 1309741924
+NAS-Port-Type = Ethernet
+Unisphere-Egress-Policy-Name = Default_Policy-egress
+NAS-Port-ID = GigabitEthernet 3/0/3.1220095:122-95
+Unisphere-PPPoE-Description = pppoe 00:23:51:4d:78:88
+Unisphere-Ingress-Policy-Name = SMTP-BLOCK-Subscriber
+Acct-TOS = hse-sympatico
+Epoch-Time = 1309741920
+
+
+

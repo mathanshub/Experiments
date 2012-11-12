@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+
+
+
+<hibernate-mapping package="com.hib">
+
+
+	<class name="Speaker" table="speakers" catalog="eventmgmt">
+
+		<id name="sp_id">
+			<column name="sp_id" />
+			<generator class="assigned" />
+		</id>
+
+
+		<property name="sp_name" column="sp_name"/>
+		
+		
+
+	</class>
+
+</hibernate-mapping>
